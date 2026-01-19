@@ -1,48 +1,59 @@
-/* Base */
-html,
-body {
-  height: 100%;
-}
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #f7f9fc;
-  color: #111;
-  margin: 0;
-}
-/* Bokser */
-.col {
-  background-color: white;
-  height: 200px;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-
-/* Auth-panel */
-.auth-panel {
-  position: fixed;
+.navbar {
+  padding: 20px 40px;
+  position: sticky;
   top: 0;
-  right: 0;
-  height: 100vh;
-  width: 340px;
-  max-width: 90vw;
-  background: #fff;
-  border-left: 1px solid #e9ecef;
-  box-shadow: -10px 0 24px rgba(0, 0, 0, 0.08);
-  transform: translateX(100%);
-  transition: transform 0.25s ease;
-  z-index: 1200;
-}
-.auth-panel.open {
-  transform: translateX(0);
+  z-index: 1000;
 }
 
-/* Små hjelpere (optional) */
-.card-hover {
-  transition: box-shadow 0.2s ease;
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
 }
-.card-hover:hover {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+
+.nav-link {
+  font-size: 1.1rem;
+}
+.nav-link:hover {
+  color: #ffffff !important;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero::after {
+  content: "";
+  position: center;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* mørkt filter */
+  z-index: 1;
+}
+
+.button {
+  position: center;
+  z-index: 2;
+  text-align: center;
+  margin-top: 40%;
 }

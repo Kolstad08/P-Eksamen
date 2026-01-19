@@ -2,8 +2,8 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 /** 1) Koble til Supabase (BYTT til dine nøkler) */
 const supabase = createClient(
-  "https://uscjxqkphtajgarnpcjo.supabase.co", // ← Project URL
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVzY2p4cWtwaHRhamdhcm5wY2pvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgzNjc1MDUsImV4cCI6MjA4Mzk0MzUwNX0.zu9dUgkwmz3txSysNkviCPh6z5GR_Yo13qhW01GB2aM" // ← anon public key
+  "https://gowuxlpzjrfgcaknklpb.supabase.co", // ← Project URL
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdvd3V4bHB6anJmZ2Nha25rbHBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1ODQ0MDMsImV4cCI6MjA4MDE2MDQwM30.syhasFc7l8Kdrl3cfzgvw7JqmV8JUx5kdkgkjZ5we7g" // ← anon public key
 );
 
 /** 2) Finn elementer */
@@ -66,6 +66,7 @@ async function refreshAuthUI() {
   roleBadge.textContent = `Rolle: ${role}`;
   userBadge.textContent = role === "admin" ? "Admin" : "Innlogget";
 }
+
 /** 6) Logg inn */
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
