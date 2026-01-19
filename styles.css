@@ -18,7 +18,7 @@
 }
 
 .best-sellers {
-  padding: 100px 0;
+  padding: 50px 0;
   background-color: #f8f9fa;
 }
 
@@ -34,6 +34,7 @@
   border-radius: 12px;
   text-align: center;
   transition: transform 0.3s ease;
+  box-shadow: black 0px 4px 6px -1px;
 }
 
 .product-card:hover {
@@ -44,4 +45,13 @@
   width: 100%;
   border-radius: 10px;
   margin-bottom: 15px;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+button[aria-expanded="true"] .arrow {
+  transform: rotate(180deg);
 }

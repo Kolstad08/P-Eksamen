@@ -20,40 +20,59 @@
 .hero {
   position: relative;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
+  box-shadow: black 0px 4px 6px -1px;
 }
-
 .hero video {
   position: absolute;
-  top: 40%;
-  left: 40%;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: -1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   color: white;
   text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
-.hero::after {
-  content: "";
-  position: center;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* mørkt filter */
-  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* midt på skjermen */
+  align-items: center;
+  gap: 12px;
 }
 
 .button {
-  position: center;
-  z-index: 2;
+  position: relative; /* 🔥 viktig */
+  z-index: 3; /* over overlay/video */
   text-align: center;
-  margin-top: 40%;
+  margin-top: 45%;
+}
+
+.best-sellers {
+  padding: 90px 0;
+  background: #f8f9fa;
+}
+
+.product-card {
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  height: 100%;
+  box-shadow: black 0px 4px 6px -1px;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
 }
