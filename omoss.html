@@ -1,101 +1,144 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
     />
-
-    <style>
-      body {
-        padding-top: 80px;
-      } /* hvis du har fixed-top navbar */
-
-      .hero {
-        position: relative;
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-      }
-      .hero video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.45);
-      }
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        color: white;
-        text-align: center;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-
-      .best-sellers {
-        padding: 100px 0;
-        background: #f8f9fa;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   </head>
-
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-3">
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
       <a class="navbar-brand" href="#">SIGN</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Hjem</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="produkt.html">Produkt</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="materiell.html">Materiell</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="omoss.html">Om oss</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="kontakt.html">Kontakt</a>
+          </li>
+
+          </li>
+        </ul>
+      </div>
     </nav>
+<!-- navbar-->
 
-    <header class="hero">
-      <video autoplay muted loop playsinline>
-        <source src="video.mp4" type="video/mp4" />
-      </video>
+<!-- Skrivt -->
+    <section class="best-sellers">
+  <div class="container">
+    <h2>Om oss</h2>
+<!-- skrift -->
 
-      <div class="hero-content">
-        <h1>SIGN</h1>
-        <p>Iconic Football Kits</p>
-        <a href="#bestselgere" class="btn btn-light">Se bestselgere</a>
+    <section class="om-oss">
+  <div class="container">
+    <h3>Historien bak SIGN</h3>
+    <p>SIGN ble skapt av én enkel idé:</p>
+    <p><strong>Øyeblikkene i fotballhistorien fortjener å bli bevart.</strong></p>
+    <p>I en tid der drakter skiftes hvert år og design forsvinner like raskt som trendene, ønsket vi å gå tilbake til det som virkelig betyr noe – draktene som bar legender, øyeblikkene som definerte karrierer, og kampene som aldri blir glemt.</p>
+    <p>SIGN handler om ikoniske fotballdrakter fra de største øyeblikkene i historien.
+Fra overtidsscoringer i Champions League-finaler, til verdensmesterskap som samlet hele nasjoner – hver drakt forteller en historie.</p>
+<p>Vi ser på fotballdrakter som mer enn bare sportstøy.</p>
+<p>De er kultur.</p>
+<p>De er identitet.</p>
+<p>De er minner.</p>
+<p>Hver drakt i SIGN-kolleksjonen er valgt for det den representerer: en spiller, et lag, et år – og et øyeblikk som satte sitt preg på fotballens historie. Vårt mål er å gi nytt liv til disse øyeblikkene, og gjøre dem tilgjengelige for samlere, fans og alle som deler lidenskapen for spillet.</p>
+<p><strong>SIGN er for dem som vet at ikoner aldri falmer.</strong></p>
+<!-- Historie -->
+
+
+
+<!-- Underside -->
+ <footer class="sign-footer">
+  <div class="footer-content container">
+    <div class="row">
+
+      <!-- Venstre kolonne -->
+      <div class="col-md-4 footer-links">
+        <h5>SIGN</h5>
+        <a href="index.html">Hjem</a>
+        <a href="produkt.html">Butikk</a>
+        <a href="omoss.html">Om oss</a>
       </div>
-    </header>
 
-    <section id="bestselgere" class="best-sellers">
-      <div class="container">
-        <h2 class="text-center mb-5">Bestselgere</h2>
-
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="p-3 bg-white rounded shadow-sm">
-              <h3 class="h5">Beckham – 1999</h3>
-              <p class="mb-0">Man United Home</p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="p-3 bg-white rounded shadow-sm">
-              <h3 class="h5">Ronaldo – 2002</h3>
-              <p class="mb-0">Brasil Home</p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="p-3 bg-white rounded shadow-sm">
-              <h3 class="h5">Zidane – 1998</h3>
-              <p class="mb-0">Frankrike Home</p>
-            </div>
-          </div>
-        </div>
+      <!-- Midt kolonne -->
+      <div class="col-md-4 footer-links">
+        <h5>Hjelp</h5>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="#">Frakt og retur</a>
+        <a href="#">Ofte stilte spørsmål</a>
       </div>
-    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Høyre kolonne -->
+      <div class="col-md-4 footer-newsletter">
+        <h5>Hold deg oppdatert</h5>
+        <p>Få tidlig tilgang til nye lanseringer, spesielle drops og historier.</p>
+
+        <form>
+          <input type="email" placeholder="Din e-post">
+          <button type="submit">Send</button>
+
+          <label class="terms">
+            <input type="checkbox">
+            Jeg godtar vilkår og betingelser
+          </label>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Stor bakgrunnstekst -->
+  <div class="footer-brand">
+    SIGN
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SIGN. Alle rettigheter reservert.</p>
+    <a href="#">Personvernerklæring</a>
+  </div>
+</footer>
+
+
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
 </html>

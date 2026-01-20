@@ -11,6 +11,10 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -68,12 +72,16 @@
     <!-- BESTSELGERE (UNDER VIDEOEN) -->
     <section id="bestselgere" class="best-sellers">
       <div class="container">
-        <h2 class="text-center mb-5">Bestselgere</h2>
+        <h1 class="text-center mb-5">Bestselgere</h1>
 
         <div class="row g-4">
           <div class="col-md-4">
             <div class="product-card">
-              <img src="beckham.webp" alt="Beckham – Man United 1999" />
+            <div class="product-image">
+             <img src="beckham-front.webp" alt="Beckham 1999 front" class="img-front">
+             <img src="beckham-back.webp" alt="Beckham 1999 back" class="img-back">
+            </div>
+
               <h3>Beckham – 1999</h3>
               <p>Man United Home (retro)</p>
               <a href="produkt.html" class="btn btn-dark btn-sm">Se mer</a>
@@ -82,7 +90,10 @@
 
           <div class="col-md-4">
             <div class="product-card">
-              <img src="ronaldo.png" alt="Ronaldo – Brasil 2002" />
+            <div class="product-image">
+             <img src="ronaldo-front.webp" alt="Ronaldo 2002 front" class="img-front">
+             <img src="ronaldo-back.webp" alt="Ronaldo 2002 back" class="img-back">
+            </div>
               <h3>Ronaldo – 2002</h3>
               <p>Brasil Home (VM)</p>
               <a href="produkt.html" class="btn btn-dark btn-sm">Se mer</a>
@@ -91,7 +102,10 @@
 
           <div class="col-md-4">
             <div class="product-card">
-              <img src="zidane.jpg" alt="Zidane – Frankrike 1998" />
+            <div class="product-image">
+             <img src="zidane-front.jpg" alt="Zidane 1998 front" class="img-front">
+             <img src="zidane-back.jpg" alt="Zidane 1998 back" class="img-back">
+            </div>
               <h3>Zidane – 1998</h3>
               <p>Frankrike Home (VM)</p>
               <a href="produkt.html" class="btn btn-dark btn-sm">Se mer</a>
@@ -101,10 +115,65 @@
       </div>
     </section>
 
+    <footer class="sign-footer">
+  <div class="footer-content container">
+    <div class="row">
+
+<footer class="sign-footer">
+  <div class="footer-content container">
+    <div class="row">
+
+      <!-- Venstre kolonne -->
+      <div class="col-md-4 footer-links">
+        <h5>SIGN</h5>
+        <a href="index.html">Hjem</a>
+        <a href="produkt.html">Butikk</a>
+        <a href="omoss.html">Om oss</a>
+      </div>
+
+      <!-- Midt kolonne -->
+      <div class="col-md-4 footer-links">
+        <h5>Hjelp</h5>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="#">Frakt og retur</a>
+        <a href="#">Ofte stilte spørsmål</a>
+      </div>
+
+      <!-- Høyre kolonne -->
+      <div class="col-md-4 footer-newsletter">
+        <h5>Hold deg oppdatert</h5>
+        <p>Få tidlig tilgang til nye lanseringer, spesielle drops og historier.</p>
+
+        <form>
+          <input type="email" placeholder="Din e-post">
+          <button type="submit">Send</button>
+
+          <label class="terms">
+            <input type="checkbox">
+            Jeg godtar vilkår og betingelser
+          </label>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Stor bakgrunnstekst -->
+  <div class="footer-brand">
+    SIGN
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SIGN. Alle rettigheter reservert.</p>
+    <a href="#">Personvernerklæring</a>
+  </div>
+</footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    
   </body>
 </html>

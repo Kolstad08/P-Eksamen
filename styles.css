@@ -8,6 +8,8 @@
 .navbar-brand {
   font-size: 2rem;
   font-weight: bold;
+  margin-left: 20px;
+  font-family: "Playfair Display", serif;
 }
 
 .nav-link {
@@ -25,6 +27,7 @@
 .best-sellers h2 {
   text-align: center;
   margin-bottom: 50px;
+  margin-top: 50px;
   font-size: 2.5rem;
 }
 
@@ -55,3 +58,98 @@
 button[aria-expanded="true"] .arrow {
   transform: rotate(180deg);
 }
+
+/* Underside */
+.sign-footer {
+  position: relative;
+  background: #ffffff; /* hvit bakgrunn */
+  color: #000000; /* svart tekst */
+  padding: 100px 0 40px;
+  overflow: hidden;
+}
+
+/* Lenker */
+.sign-footer a {
+  color: #000000;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.sign-footer a:hover {
+  opacity: 1;
+}
+
+/* Overskrifter */
+.footer-links h5,
+.footer-newsletter h5 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Tekst */
+.footer-newsletter p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Input */
+.footer-newsletter input[type="email"] {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  color: #000000;
+  padding: 8px 0;
+  margin-bottom: 12px;
+}
+
+.footer-newsletter input::placeholder {
+  color: #000000;
+  opacity: 0.5;
+}
+
+/* Knapp */
+.footer-newsletter button {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Checkbox-tekst */
+.footer-newsletter .terms {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 10px;
+  opacity: 0.7;
+}
+
+/* Stor SIGN-tekst i bakgrunnen */
+.footer-brand {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 18vw;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  color: rgba(0, 0, 0, 0.08); /* svak svart */
+  pointer-events: none;
+}
+
+/* Bunnlinje */
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+/* Underside */

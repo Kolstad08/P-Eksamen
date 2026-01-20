@@ -11,8 +11,13 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
+
+<!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
       <a class="navbar-brand" href="#">SIGN</a>
@@ -52,10 +57,15 @@
         </ul>
       </div>
     </nav>
+<!-- navbar-->
+
+<!-- Skrivt -->
     <section class="best-sellers">
   <div class="container">
     <h2>Produkter</h2>
+<!-- skrift -->
 
+<!-- start beckham -->
     <div class="row">
       <div class="col-md-4">
         <div class="product-card">
@@ -63,34 +73,59 @@
           <h3>Beckham – Man United 1999</h3>
           <p>Ikonisk hjemmedrakt fra treble-sesongen.</p>
           <h5>25 999 kr</h5>
-        <a href="kjøp.html" class="btn btn-dark btn-sm">Kjøp nå</a>
+<button
+  class="btn btn-dark btn-sm"
+  data-bs-toggle="modal"
+  data-bs-target="#modalBeckham"
+>
+  Kjøp nå
+</button>
+
         <a href="hanlekurv.html" class="btn btn-dark btn-sm">Legg til handlekurv</a>
         </div>
       </div>
+<!-- slutt beckham -->
 
+<!-- start ronaldo -->
       <div class="col-md-4">
         <div class="product-card">
           <img src="ronaldo.webp" alt="Ronaldo 2002">
           <h3>Ronaldo – Brasil 2002</h3>
           <p>VM-drakten som gjorde ham udødelig.</p>
           <h5>16 999 kr</h5>
-        <a href="kjøp.html" class="btn btn-dark btn-sm">Kjøp nå</a>
+<button
+  class="btn btn-dark btn-sm"
+  data-bs-toggle="modal"
+  data-bs-target="#modalRonaldo"
+>
+  Kjøp nå
+</button>
+
         <a href="hanlekurv.html" class="btn btn-dark btn-sm">Legg til handlekurv</a>
         </div>
       </div>
+<!-- slutt ronaldo-->
 
-      <!-- boks starter her -->
+<!-- start zidane -->
       <div class="col-md-4">
         <div class="product-card">
           <img src="zidane.jpg" alt="Zidane 1998">
           <h3>Zidane – Frankrike 1998</h3>
           <p>Verdensmester på hjemmebane.</p>
           <h5>10 999 kr</h5>
-        <a href="kjøp.html" class="btn btn-dark btn-sm">Kjøp nå</a>
+<button
+  class="btn btn-dark btn-sm"
+  data-bs-toggle="modal"
+  data-bs-target="#modalZidane"
+>
+  Kjøp nå
+</button>
         <a href="hanlekurv.html" class="btn btn-dark btn-sm">Legg til handlekurv</a>
         </div>
       </div> 
-      <!-- boks slutter her -->
+<!-- slutt zidane -->
+
+<!-- Flere produkter -->
       <div class="text-center mt-5">
   <button
     class="btn btn-outline-dark"
@@ -102,7 +137,9 @@
     <span class="arrow">⌄</span>
   </button>
 </div>
+<!-- Flere produkter -->
 
+<!-- start ronaldinho -->
 <div class="collapse mt-4" id="moreProducts">
   <div class="container">
     <div class="row g-4">
@@ -117,7 +154,9 @@
         <a href="hanlekurv.html" class="btn btn-dark btn-sm">Legg til handlekurv</a>
         </div>
       </div>
+<!-- slutt ronaldinho -->
 
+<!-- star messi -->
       <div class="col-md-4">
         <div class="product-card">
         <img src="messi.webp" alt="Messi 2006">
@@ -128,7 +167,9 @@
         <a href="hanlekurv.html" class="btn btn-dark btn-sm">Legg til handlekurv</a>
         </div>
       </div>
+<!-- slutt messi -->
 
+<!-- start henry -->
       <div class="col-md-4">
         <div class="product-card">
         <img src="henry.webp" alt="Henry 2004">
@@ -139,16 +180,230 @@
         <a href="hanlekurv.html" class="btn btn-dark btn-sm">Legg til handlekurv</a>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
+<!-- slutt henry -->
+       </div>
+      </div>
+     </div>
     </div>
   </div>
 </section>
 
 
+<!-- MODAL: BECKHAM 1999 -->
+<div class="modal fade" id="modalBeckham" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
 
+      <div class="modal-header">
+        <h5 class="modal-title">Beckham – Man United 1999</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row g-4 align-items-start">
+          <div class="col-md-5">
+            <img
+              src="beckham.webp"
+              alt="Beckham 1999"
+              class="img-fluid rounded"
+            />
+          </div>
+
+          <div class="col-md-7">
+            <p><strong>År:</strong> 1999</p>
+            <p><strong>Klubb:</strong> Manchester United</p>
+
+            <p>
+              <strong>Historien:</strong>
+              Treble-sesongen 1998/99. Denne drakten symboliserer
+              et av de største øyeblikkene i fotballhistorien – avgjort
+              på overtid i Champions League-finalen.
+            </p>
+
+            <p class="fs-5"><strong>Pris:</strong> 25 999 kr</p>
+
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary">Legg i handlekurv</button>
+              <button
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                Lukk
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: RONALDO 2002 -->
+<div class="modal fade" id="modalRonaldo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Ronaldo – Brasil 2002</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row g-4 align-items-start">
+          <div class="col-md-5">
+            <img
+              src="ronaldo.webp"
+              alt="Ronaldo Brasil 2002"
+              class="img-fluid rounded"
+            />
+          </div>
+
+          <div class="col-md-7">
+            <p><strong>År:</strong> 2002</p>
+            <p><strong>Landslag:</strong> Brasil</p>
+
+            <p>
+              <strong>Historien:</strong>
+              Etter to alvorlige kneskader kom Ronaldo tilbake og
+              dominerte VM 2002. Med åtte mål, inkludert to i finalen,
+              sikret han Brasil sitt femte verdensmesterskap og
+              sementerte sin plass som en av tidenes største spisser.
+            </p>
+
+            <p class="fs-5"><strong>Pris:</strong> 16 999 kr</p>
+
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary">Legg i handlekurv</button>
+              <button
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                Lukk
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: ZIDANE 1998 -->
+<div class="modal fade" id="modalZidane" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Zidane – Frankrike 1998</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row g-4 align-items-start">
+          <div class="col-md-5">
+            <img
+              src="zidane.jpg"
+              alt="Zidane Frankrike 1998"
+              class="img-fluid rounded"
+            />
+          </div>
+
+          <div class="col-md-7">
+            <p><strong>År:</strong> 1998</p>
+            <p><strong>Landslag:</strong> Frankrike</p>
+
+            <p>
+              <strong>Historien:</strong>
+              VM-finalen i 1998. To headinger fra Zinedine Zidane på
+              hjemmebane sendte Frankrike til sitt første
+              verdensmesterskap. Denne drakten symboliserer eleganse,
+              kontroll og et øyeblikk som definerte en hel nasjon.
+            </p>
+
+            <p class="fs-5"><strong>Pris:</strong> 10 999 kr</p>
+
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary">Legg i handlekurv</button>
+              <button
+                class="btn btn-outline-secondary"
+                data-bs-dismiss="modal"
+              >
+                Lukk
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- underside -->
+<footer class="sign-footer">
+  <div class="footer-content container">
+    <div class="row">
+
+      <!-- Venstre kolonne -->
+      <div class="col-md-4 footer-links">
+        <h5>SIGN</h5>
+        <a href="index.html">Hjem</a>
+        <a href="produkt.html">Butikk</a>
+        <a href="omoss.html">Om oss</a>
+      </div>
+
+      <!-- Midt kolonne -->
+      <div class="col-md-4 footer-links">
+        <h5>Hjelp</h5>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="#">Frakt og retur</a>
+        <a href="#">Ofte stilte spørsmål</a>
+      </div>
+
+      <!-- Høyre kolonne -->
+      <div class="col-md-4 footer-newsletter">
+        <h5>Hold deg oppdatert</h5>
+        <p>Få tidlig tilgang til nye lanseringer, spesielle drops og historier.</p>
+
+        <form>
+          <input type="email" placeholder="Din e-post">
+          <button type="submit">Send</button>
+
+          <label class="terms">
+            <input type="checkbox">
+            Jeg godtar vilkår og betingelser
+          </label>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Stor bakgrunnstekst -->
+  <div class="footer-brand">
+    SIGN
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SIGN. Alle rettigheter reservert.</p>
+    <a href="#">Personvernerklæring</a>
+  </div>
+</footer>
 
 
 
