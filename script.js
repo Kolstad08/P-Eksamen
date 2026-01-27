@@ -2,8 +2,8 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 /** 1) Koble til Supabase (BYTT til dine nøkler) */
 const supabase = createClient(
-  "https://gowuxlpzjrfgcaknklpb.supabase.co", // ← Project URL
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdvd3V4bHB6anJmZ2Nha25rbHBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1ODQ0MDMsImV4cCI6MjA4MDE2MDQwM30.syhasFc7l8Kdrl3cfzgvw7JqmV8JUx5kdkgkjZ5we7g" // ← anon public key
+  "https://uscjxqkphtajgarnpcjo.supabase.co", // ← Project URL
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVzY2p4cWtwaHRhamdhcm5wY2pvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgzNjc1MDUsImV4cCI6MjA4Mzk0MzUwNX0.zu9dUgkwmz3txSysNkviCPh6z5GR_Yo13qhW01GB2aM" // ← anon public key
 );
 
 /** 2) Finn elementer */
@@ -71,16 +71,41 @@ async function refreshAuthUI() {
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   loginMsg.textContent = "Logger inn...";
+
   const email = document.getElementById("loginEmail").value.trim();
   const pass = document.getElementById("loginPass").value;
 
-  const { error } = await supabase.auth.signInWithPassword({
-    email,
-    password: pass,
-  });
-  loginMsg.textContent = error ? "Feil: " + error.message : "Innlogget ✅";
-  await refreshAuthUI();
-  if (!error) setTimeout(() => panel.classList.remove("open"), 400);
+  console.log("Prøver å logge inn:", email);
+
+  try {
+    // Timeout etter 8 sek hvis den henger
+    const timeout = new Promise((_, reject) =>
+      setTimeout(
+        () => reject(new Error("Tidsavbrudd. Kjør du med Live Server?")),
+        8000
+      )
+    );
+
+    const loginPromise = supabase.auth.signInWithPassword({
+      email,
+      password: pass,
+    });
+
+    const { data, error } = await Promise.race([loginPromise, timeout]);
+
+    console.log("LOGIN RESULT:", { data, error });
+
+    if (error) {
+      loginMsg.textContent = "Feil: " + error.message;
+      return;
+    }
+
+    loginMsg.textContent = "Innlogget ✅ Sender deg videre...";
+    window.location.replace("main.html");
+  } catch (err) {
+    console.error(err);
+    loginMsg.textContent = "Feil: " + err.message;
+  }
 });
 
 /** 7) Opprett bruker */

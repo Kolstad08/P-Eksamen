@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,12 +14,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
   </head>
   <body>
-
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" href="#">SIGN</a>
 
       <button
@@ -36,55 +34,92 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">Hjem</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href="produkt.html">Produkt</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href="materiell.html">Materiell</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href="omoss.html">Om oss</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href="kontakt.html">Kontakt</a>
-          </li>
-
           </li>
         </ul>
       </div>
     </nav>
-<!-- navbar-->
 
-<!-- Skrivt -->
-    <section class="best-sellers">
-  <div class="container">
-    <h2>Om oss</h2>
-<!-- skrift -->
-
-    <section class="om-oss">
-  <div class="container">
-    <h3>Historien bak SIGN</h3>
-    <p>SIGN ble skapt av én enkel idé:</p>
-    <p><strong>Øyeblikkene i fotballhistorien fortjener å bli bevart.</strong></p>
-    <p>I en tid der drakter skiftes hvert år og design forsvinner like raskt som trendene, ønsket vi å gå tilbake til det som virkelig betyr noe – draktene som bar legender, øyeblikkene som definerte karrierer, og kampene som aldri blir glemt.</p>
-    <p>SIGN handler om ikoniske fotballdrakter fra de største øyeblikkene i historien.
-Fra overtidsscoringer i Champions League-finaler, til verdensmesterskap som samlet hele nasjoner – hver drakt forteller en historie.</p>
-<p>Vi ser på fotballdrakter som mer enn bare sportstøy.</p>
-<p>De er kultur.</p>
-<p>De er identitet.</p>
-<p>De er minner.</p>
-<p>Hver drakt i SIGN-kolleksjonen er valgt for det den representerer: en spiller, et lag, et år – og et øyeblikk som satte sitt preg på fotballens historie. Vårt mål er å gi nytt liv til disse øyeblikkene, og gjøre dem tilgjengelige for samlere, fans og alle som deler lidenskapen for spillet.</p>
-<p><strong>SIGN er for dem som vet at ikoner aldri falmer.</strong></p>
-<!-- Historie -->
+    <!-- HERO MED VIDEO -->
+    <div class="hero">
+      <video autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4" />
+      </video>
 
 
+        <div class="button">
+          <a href="produkt.html" class="btn btn-primary btn-lg"
+            >Utforsk Produkter</a
+          >
+          <a href="#bestselgere" class="btn btn-outline-light btn-lg ms-2"
+            >Se bestselgere</a
+          >
+        </div>
+      </div>
+    </div>
+    <!-- ✅ HER LUKKER VI HERO -->
 
-<!-- Underside -->
- <footer class="sign-footer">
+    <!-- BESTSELGERE (UNDER VIDEOEN) -->
+    <section id="bestselgere" class="best-sellers">
+      <div class="container">
+        <h1 class="text-center mb-5">Bestselgere</h1>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="product-card">
+            <div class="product-image">
+             <img src="beckham-front.webp" alt="Beckham 1999 front" class="img-front">
+             <img src="beckham-back.webp" alt="Beckham 1999 back" class="img-back">
+            </div>
+
+              <h3>Beckham – 1999</h3>
+              <p>Man United Home (retro)</p>
+              <a href="produkt.html" class="btn btn-dark btn-sm">Se mer</a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="product-card">
+            <div class="product-image">
+             <img src="ronaldo-front.webp" alt="Ronaldo 2002 front" class="img-front">
+             <img src="ronaldo-back.webp" alt="Ronaldo 2002 back" class="img-back">
+            </div>
+              <h3>Ronaldo – 2002</h3>
+              <p>Brasil Home (VM)</p>
+              <a href="produkt.html" class="btn btn-dark btn-sm">Se mer</a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="product-card">
+            <div class="product-image">
+             <img src="zidane-front.jpg" alt="Zidane 1998 front" class="img-front">
+             <img src="zidane-back.jpg" alt="Zidane 1998 back" class="img-back">
+            </div>
+              <h3>Zidane – 1998</h3>
+              <p>Frankrike Home (VM)</p>
+              <a href="produkt.html" class="btn btn-dark btn-sm">Se mer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="sign-footer">
+  <div class="footer-content container">
+    <div class="row">
+
+<footer class="sign-footer">
   <div class="footer-content container">
     <div class="row">
 
@@ -134,11 +169,10 @@ Fra overtidsscoringer i Champions League-finaler, til verdensmesterskap som saml
   </div>
 </footer>
 
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
   </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"
-  ></script>
 </html>
