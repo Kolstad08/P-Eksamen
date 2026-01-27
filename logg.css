@@ -3,15 +3,13 @@ html,
 body {
   height: 100%;
 }
-
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   background: #f7f9fc;
   color: #111;
   margin: 0;
 }
-
-/* Bokser (hvis du bruker .col et sted) */
+/* Bokser */
 .col {
   background-color: white;
   height: 200px;
@@ -22,74 +20,26 @@ body {
   text-align: center;
 }
 
-/* ====== AUTH: Midtstilt overlay + glass-boks ====== */
-
-/* Skjul panelet som standard (viktig) */
+/* Auth-panel */
 .auth-panel {
   position: fixed;
-  inset: 0;
-  display: none; /* skjult til .open legges på */
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 340px;
+  max-width: 90vw;
+  background: #fff;
+  border-left: 1px solid #e9ecef;
+  box-shadow: -10px 0 24px rgba(0, 0, 0, 0.08);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
   z-index: 1200;
 }
-
-/* Når du åpner panelet (script.js legger på .open) */
 .auth-panel.open {
-  display: flex;
+  transform: translateX(0);
 }
 
-/* Selve innloggingsboksen (glass) */
-.auth-box {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 20px;
-
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-
-  overflow: hidden; /* runde kanter på header/innhold */
-  animation: fadeUp 0.35s ease;
-}
-
-/* Gjør tekst lesbar på glass */
-.auth-box,
-.auth-box * {
-  color: #000;
-}
-
-/* Litt penere header på boksen */
-.auth-box header {
-  background: rgba(255, 255, 255, 0.35);
-}
-
-/* Valgfritt: knappene litt mer premium */
-.auth-box .btn {
-  border-radius: 10px;
-}
-
-/* Liten animasjon */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Små hjelpere (optional) */
+/* SmÃ¥ hjelpere (optional) */
 .card-hover {
   transition: box-shadow 0.2s ease;
 }
@@ -97,6 +47,13 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
 }
 
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: black 0px 4px 6px -1px;
+}
 .hero video {
   position: absolute;
   inset: 0;
