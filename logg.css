@@ -1,12 +1,7 @@
-/* Base */
-html,
-body {
-  height: 100%;
-}
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   background: #f7f9fc;
-  color: #111;
+  color: #ffffff;
   margin: 0;
 }
 /* Bokser */
@@ -20,23 +15,34 @@ body {
   text-align: center;
 }
 
-/* Auth-panel */
+/* Fullskjerm overlay */
 .auth-panel {
   position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 340px;
-  max-width: 90vw;
-  background: #fff;
-  border-left: 1px solid #e9ecef;
-  box-shadow: -10px 0 24px rgba(0, 0, 0, 0.08);
-  transform: translateX(100%);
-  transition: transform 0.25s ease;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.4); /* mørk bakgrunn bak boksen */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
   z-index: 1200;
 }
-.auth-panel.open {
-  transform: translateX(0);
+
+/* Selve glass-boksen */
+.auth-box {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+
+  background: rgba(255, 255, 255, 0.2); /* gjennomsiktig */
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 /* SmÃ¥ hjelpere (optional) */
@@ -55,4 +61,24 @@ body {
 }
 .auth-panel-content {
   padding: 16px;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: black 0px 4px 6px -1px;
+}
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  object-position: 1700% 50%;
+}
+
+.auth-panel header {
+  color: white;
 }

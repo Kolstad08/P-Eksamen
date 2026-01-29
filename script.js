@@ -71,41 +71,16 @@ async function refreshAuthUI() {
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   loginMsg.textContent = "Logger inn...";
-
   const email = document.getElementById("loginEmail").value.trim();
   const pass = document.getElementById("loginPass").value;
 
-  console.log("Prøver å logge inn:", email);
-
-  try {
-    // Timeout etter 8 sek hvis den henger
-    const timeout = new Promise((_, reject) =>
-      setTimeout(
-        () => reject(new Error("Tidsavbrudd. Kjør du med Live Server?")),
-        8000
-      )
-    );
-
-    const loginPromise = supabase.auth.signInWithPassword({
-      email,
-      password: pass,
-    });
-
-    const { data, error } = await Promise.race([loginPromise, timeout]);
-
-    console.log("LOGIN RESULT:", { data, error });
-
-    if (error) {
-      loginMsg.textContent = "Feil: " + error.message;
-      return;
-    }
-
-    loginMsg.textContent = "Innlogget ✅ Sender deg videre...";
-    window.location.replace("main.html");
-  } catch (err) {
-    console.error(err);
-    loginMsg.textContent = "Feil: " + err.message;
-  }
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password: pass,
+  });
+  loginMsg.textContent = error ? "Feil: " + error.message : "Innlogget ✅";
+  await refreshAuthUI();
+  if (!error) setTimeout(() => panel.classList.remove("open"), 400);
 });
 
 /** 7) Opprett bruker */
@@ -136,6 +111,35 @@ document.getElementById("logoutBtn").addEventListener("click", async () => {
   await refreshAuthUI();
 });
 
-/** 9) Hold UI i sync */
-supabase.auth.onAuthStateChange(() => refreshAuthUI());
+/** 9) Hold UI i sync + redirect ved login */
+supabase.auth.onAuthStateChange((event, session) => {
+  if (event === "SIGNED_IN") {
+    window.location.href = "main.html";
+    return;
+  }
+
+  // fallback for logout / refresh
+  refreshAuthUI();
+});
+
+refreshAuthUI();
+
+let redirecting = false;
+
+supabase.auth.onAuthStateChange((event, session) => {
+  // Redirect bare fra login-siden, og bare når vi faktisk har session
+  if (
+    !redirecting &&
+    event === "SIGNED_IN" &&
+    session?.user &&
+    window.location.pathname.endsWith("index.html")
+  ) {
+    redirecting = true;
+    window.location.replace("main.html");
+    return;
+  }
+
+  if (!redirecting) refreshAuthUI();
+});
+
 refreshAuthUI();
